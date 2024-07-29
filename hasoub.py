@@ -74,6 +74,7 @@ def demo():
 
 @app.route('/error',methods=["GET","POST"])
 def error():
+
 	return render_template("error.html")
 
 @app.route('/history',methods=["GET","POST"])
@@ -92,7 +93,7 @@ def custome():
 
 @app.route('/priorty',methods=["GET","POST"])
 def priorty():
-	return render_template("priorty.html")
+	return render_template("priority.html")
 
 
 
