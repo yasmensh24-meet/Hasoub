@@ -87,11 +87,6 @@ def signin():
     return render_template("signin.html")
 
 
-
-
-
-
-
 @app.route('/demo',methods=["GET","POST"])
 def demo():
 	return render_template("demo.html")
