@@ -40,7 +40,10 @@ def main():
       uid =session['user']['localId']
 
       db.child("Users").child(uid).set(user)
-      acc= db.child("Users").child(uid).get().val()
+      acc = db.child("Users").child(uid).get().val()
+
+      print(acc)
+
       email = acc['em']
       session['em'] = email
       #added now
@@ -66,8 +69,6 @@ def main():
 
 @app.route('/demo',methods=["GET","POST"])
 def demo():
-
-
 	return render_template("demo.html")
 
 
@@ -78,5 +79,4 @@ def error():
 
 
 if __name__ == '__main__':
- 
     app.run( debug=True)
