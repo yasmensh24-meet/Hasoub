@@ -90,7 +90,7 @@ def custome():
 def priorty():
 	return render_template("priorty.html")
 
-
+5
 
 if __name__ == '__main__':
     app.run( debug=True)
