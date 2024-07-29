@@ -65,6 +65,26 @@ def main():
   else:
     return render_template("membership.html")
 
+@app.route('/signin', methods=["GET","POST"])
+def signin():
+  if request.method == "POST":
+    email= request.form ["email"]
+    passw = request.form["password"]
+
+    try:
+      session['user'] = auth.sign_in_with_email_and_password(email, passw)
+      #if email == "":
+       # return redirect(url_for("admin"))
+
+      return redirect(url_for("demo"))
+    except:
+
+      print("error try again")
+      session.modified=True
+      return redirect(url_for('error'))
+      
+  else:
+    return render_template("signin.html")
 
 
 @app.route('/demo',methods=["GET","POST"])
@@ -74,6 +94,7 @@ def demo():
 
 @app.route('/error',methods=["GET","POST"])
 def error():
+
 	return render_template("error.html")
 
 @app.route('/history',methods=["GET","POST"])
@@ -91,8 +112,32 @@ def custome():
 
 
 @app.route('/priorty',methods=["GET","POST"])
-def priorty():
-	return render_template("priorty.html")
+def priority():
+  if request.method == "GET":   
+    return render_template("priority.html")
+
+  else:
+    date = request.form["date"]
+    try:
+      session['dates']=[]
+      session['dates'].append(date)
+      session.modified = True
+
+      uid =session['user']['localId']
+      #print('uid')
+      #ref = db.child("Users").child(uid).get().val()
+      
+      saved = {"date":date}
+      db.child('booked').child(uid).set(saved)
+      session['date_apt'] = date
+
+      return redirect(url_for("thank"))
+    except:
+      print("error try again")
+      return render_template('error.html')
+
+  
+
 
 
 
