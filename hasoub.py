@@ -92,8 +92,12 @@ def custome():
 
 
 @app.route('/priorty',methods=["GET","POST"])
-def priorty():
-	return render_template("priority.html")
+def priority():
+  if request.method == "GET":   
+    return render_template("priority.html")
+  else:
+    return redirect(url_for("thank"))
+
 
 
 
