@@ -83,7 +83,8 @@ def history():
 
 @app.route('/custome',methods=["GET","POST"])
 def custome():
-	return render_template("custome.html")
+
+	return render_template("thank.html")
 
 @app.route('/priorty',methods=["GET","POST"])
 def priorty():
