@@ -32,7 +32,7 @@ def main():
     email= request.form ["email"]
     passw = request.form["password"]
     name= request.form["name"]
-    phone= request.form[""]
+    phone= request.form["phone"]
     user = { "em": email,"fullname" :name,"phonenum":phone,"password":passw} 
     
     try:
@@ -40,7 +40,10 @@ def main():
       uid =session['user']['localId']
 
       db.child("Users").child(uid).set(user)
-      acc= db.child("Users").child(uid).get().val()
+      acc = db.child("Users").child(uid).get().val()
+
+      print(acc)
+
       email = acc['em']
       session['em'] = email
       #added now
@@ -55,10 +58,9 @@ def main():
 
       return redirect(url_for('demo'))
     except:
-
       print("error try again")
-    session.modified=True
-    return redirect(url_for('demo'))
+      session.modified=True
+      return redirect('/error')
       
   else:
     return render_template("membership.html")
@@ -70,9 +72,11 @@ def demo():
 	return render_template("demo.html")
 
 
+@app.route('/error',methods=["GET","POST"])
+def error():
+	return render_template("error.html")
 
 
 
 if __name__ == '__main__':
- 
     app.run( debug=True)
