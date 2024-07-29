@@ -32,7 +32,7 @@ def main():
     email= request.form ["email"]
     passw = request.form["password"]
     name= request.form["name"]
-    phone= request.form[""]
+    phone= request.form["phone"]
     user = { "em": email,"fullname" :name,"phonenum":phone,"password":passw} 
     
     try:
