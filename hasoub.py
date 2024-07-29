@@ -3,8 +3,6 @@ from flask import session
 import pyrebase
 
 
-
-
 Config = {
   "apiKey": "AIzaSyDySMuW71nJCobS-SLkEU08AeHHFtD0OOA",
   "authDomain": "hasoub-4c475.firebaseapp.com",
