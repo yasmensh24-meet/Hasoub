@@ -84,13 +84,13 @@ def history():
 @app.route('/custome',methods=["GET","POST"])
 def custome():
 
-	return render_template("thank.html")
+	return render_template("custome.html")
 
 @app.route('/priorty',methods=["GET","POST"])
 def priorty():
 	return render_template("priorty.html")
 
-
+5
 
 if __name__ == '__main__':
     app.run( debug=True)
