@@ -128,7 +128,7 @@ def priority():
       #ref = db.child("Users").child(uid).get().val()
       
       saved = {"date":date}
-      db.child('booked').child(uid).set(saved)
+      db.child('booked').child(uid).push(saved)
       session['date_apt'] = date
 
       return redirect(url_for("thank"))
