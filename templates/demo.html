@@ -4,16 +4,73 @@
     <link rel="stylesheet" href="../demo/demo.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Demo</title>
+    <style type="text/css">
+        /* demo.css */
+form {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    color: #de3e4d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #de3e4d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background-color: white;
+    color: #de3e4d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+    </style>
 </head>
 <body>
-<h1>choose!</h1>
+<h1>Choose!</h1>
+<form>
     <div class="container">
-        <a href="/priorty">priorty booking</a>
+        <a href="/priorty"><button>priorty booking</button></a>
         <br>
-        <a href="/history">booking history</a>
+        <a href="/history"><button>booking history</button></a>
         <br>
-        <a href="/custome">customize</a>
+        <a href="/custome"><button>customize</button></a>
      </div>
+</form>
 </body>
 </html>

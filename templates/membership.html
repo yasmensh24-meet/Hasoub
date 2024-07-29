@@ -8,7 +8,7 @@
     <style type="text/css">
         /* membership.css */
 
-body {
+.form {
     font-family: Arial, sans-serif;
     background-color: white;
     color: black;
@@ -21,12 +21,19 @@ body {
     text-align: center;
 }
 
+.become {
+    color: #de3e4d;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
 h1 {
     color: #de3e4d;
     margin-bottom: 20px;
 }
 
 form {
+    width: 40%;
     background-color: #de3e4d;
     padding: 20px;
     border-radius: 10px;
@@ -36,7 +43,7 @@ form {
 label {
     color: white;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -45,7 +52,7 @@ input[type="password"],
 input[type="text"] {
     width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     box-sizing: border-box;
@@ -58,7 +65,7 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -80,10 +87,69 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #de3e4d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #de3e4d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.brand {
+    font-size: 24px;
+        margin-bottom: 0px !important;
+
+    font-weight: bold;
+}
+
+.nav-links a {
+        margin-bottom: 0px !important;
+
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
     </style>
 </head>
 <body>
-    <h1>become a member!</h1>
+
+    <nav class="navbar">
+        <div class="logo"></div>
+        <div class="brand"><img src="https://static.wixstatic.com/media/db8066_490993c02a46436daef4577d924b8047~mv2.png/v1/fill/w_176,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/db8066_490993c02a46436daef4577d924b8047~mv2.png" /></div>
+        <div class="nav-links">
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- -->
+
+    <h1 style="text-align: center;" class="become">Become a member</h1>
+    <div class="form">
         <form action="/" method="POST">
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email" required><br><br>
@@ -107,7 +173,7 @@ input[type="text"] {
         
         <button type="submit">Submit</button>
     </form>
-
-    <h1>(amount of days)Free trail</h1>
+</div>
+    <h1 style="text-align: center;">You have (amount of days) of Free trail!</h1>
 </body>
 </html>
