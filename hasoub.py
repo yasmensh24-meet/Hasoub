@@ -83,14 +83,32 @@ def history():
 
 @app.route('/custome',methods=["GET","POST"])
 def custome():
+  if request.method == "GET":
+    return render_template("custome.html")
+  else:
+    return redirect(url_for("thank"))
 
-	return render_template("custome.html")
+
 
 @app.route('/priorty',methods=["GET","POST"])
 def priorty():
 	return render_template("priorty.html")
 
-5
+
+
+
+@app.route('/thank',methods=["GET","POST"])
+def thank():
+  return render_template("thank.html")
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run( debug=True)
