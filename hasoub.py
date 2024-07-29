@@ -76,6 +76,19 @@ def demo():
 def error():
 	return render_template("error.html")
 
+@app.route('/history',methods=["GET","POST"])
+def history():
+	return render_template("history.html")
+
+
+@app.route('/custome',methods=["GET","POST"])
+def custome():
+	return render_template("custome.html")
+
+@app.route('/priorty',methods=["GET","POST"])
+def priorty():
+	return render_template("priorty.html")
+
 
 
 if __name__ == '__main__':
