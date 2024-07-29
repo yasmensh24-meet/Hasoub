@@ -17,6 +17,7 @@ Config = {
 };
 
 
+
 firebase = pyrebase.initialize_app(Config)
 auth = firebase.auth()
 db = firebase.database()
@@ -25,7 +26,71 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
 
+@app.route('/',methods=["GET","POST"])
+def main():
+  if request.method == "POST":
+    email= request.form ["email"]
+    passw = request.form["password"]
+    name= request.form["name"]
+    phone= request.form["phone"]
+    user = { "em": email,"fullname" :name,"phonenum":phone,"password":passw} 
+    
+    try:
+      session['user'] = auth.create_user_with_email_and_password(email, passw)
+      uid =session['user']['localId']
+
+      db.child("Users").child(uid).set(user)
+      acc = db.child("Users").child(uid).get().val()
+
+      print(acc)
+
+      email = acc['em']
+      session['em'] = email
+      #added now
+      name = acc['fullname']
+      session['fullname'] = name
+      phone = acc['phonenum']
+      session['phonenum'] = phone
+      passw = acc['password']
+      session['password'] = passw
 
 
 
+      return redirect(url_for('demo'))
+    except:
+      print("error try again")
+      session.modified=True
+      return redirect('/error')
+      
+  else:
+    return render_template("membership.html")
 
+
+
+@app.route('/demo',methods=["GET","POST"])
+def demo():
+	return render_template("demo.html")
+
+
+@app.route('/error',methods=["GET","POST"])
+def error():
+	return render_template("error.html")
+
+@app.route('/history',methods=["GET","POST"])
+def history():
+	return render_template("history.html")
+
+
+@app.route('/custome',methods=["GET","POST"])
+def custome():
+
+	return render_template("thank.html")
+
+@app.route('/priorty',methods=["GET","POST"])
+def priorty():
+	return render_template("priorty.html")
+
+
+
+if __name__ == '__main__':
+    app.run( debug=True)
