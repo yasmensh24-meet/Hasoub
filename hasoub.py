@@ -55,10 +55,9 @@ def main():
 
       return redirect(url_for('demo'))
     except:
-
       print("error try again")
-    session.modified=True
-    return redirect(url_for('demo'))
+      session.modified=True
+      return redirect('/error')
       
   else:
     return render_template("membership.html")
@@ -67,9 +66,14 @@ def main():
 
 @app.route('/demo',methods=["GET","POST"])
 def demo():
+
+
 	return render_template("demo.html")
 
 
+@app.route('/error',methods=["GET","POST"])
+def error():
+	return render_template("error.html")
 
 
 
