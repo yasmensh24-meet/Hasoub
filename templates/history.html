@@ -7,9 +7,15 @@
 </head>
 <body>
 	<h1>hello! you booked in: </h1>
-    <h1>{{session['date_apt']}} </h1>
-
-
-
+    
+	{% if history %}
+        <ul>
+            {% for booking in history %}
+                <li>{{ booking.date }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No booking history found.</p>
+    {% endif %}
 </body>
 </html>

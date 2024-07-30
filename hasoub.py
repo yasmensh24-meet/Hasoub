@@ -98,6 +98,18 @@ def error():
 
 @app.route('/history',methods=["GET","POST"])
 def history():
+	if 'user' in session:
+		uid = session['user']['localId']
+		history = db.child('booked').child(uid).get().val()
+		if history:
+			booking_history = [entry for entry in history.values()]
+		else:
+			booking_history = []
+		return render_template("history.html", history=booking_history)
+	else:
+		return redirect(url_for('signin'))
+
+
 	return render_template("history.html")
 
 
