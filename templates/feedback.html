@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #de3e4d;
+            color: white;
+            width: 100%;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .brand img {
+            height: 55px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links a:hover {
+            color: black;
+        }
+
+        .form-container {
+            background-color: #de3e4d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin-top: 80px; /* Adjust margin to ensure it's below the navbar */
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            color: #de3e4d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #de3e4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">
+            <img src="https://static.wixstatic.com/media/db8066_490993c02a46436daef4577d924b8047~mv2.png/v1/fill/w_176,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/db8066_490993c02a46436daef4577d924b8047~mv2.png" alt="Brand Logo">
+        </div>
+        <div class="nav-links">
+            <!-- Add navigation links here if needed -->
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h1>Feedback Form</h1>
+        <form method="POST" action="/">
+            <label for="feedback">Your Feedback</label>
+            <input type="text" id="feedback" name="feedback" placeholder="Give us your feedback">
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/demo" class="back-button">Back to Demo Page</a>
+    </div>
+
+</body>
+</html>

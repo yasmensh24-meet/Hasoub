@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style type="text/css">
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .button {
+            background-color: #de3e4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: black;
+        }
+
+
+        .navbar {
+		    background-color: #de3e4d;
+		    color: white;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 10px 20px;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.logo {
+		    color: #de3e4d;
+		    padding: 10px 20px;
+		    border-radius: 5px;
+		    font-size: 18px;
+		    font-weight: bold;
+		}
+
+		.brand {
+		    font-size: 24px;
+		        margin-bottom: 0px !important;
+
+		    font-weight: bold;
+		}
+
+		.nav-links a {
+		        margin-bottom: 0px !important;
+
+		    color: white;
+		    text-decoration: none;
+		    margin: 0 10px;
+		    font-size: 18px;
+		    font-weight: bold;
+		}
+
+		.nav-links a:hover {
+		    color: black;
+		}
+
+		.signin-link {
+		    display: block;
+		    text-align: center;
+		    margin-top: 20px;
+		    font-size: 20px;
+		    font-weight: bold;
+		    color: #de3e4d;
+		    text-decoration: none;
+		}
+
+		.signin-link:hover {
+		 
+
+
+            color: black;
+		}
+
+
+
+    </style>
+</head>
+<body>
+	 <nav class="navbar">
+        <div class="logo"></div>
+        <div class="brand"><img src="https://static.wixstatic.com/media/db8066_490993c02a46436daef4577d924b8047~mv2.png/v1/fill/w_176,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/db8066_490993c02a46436daef4577d924b8047~mv2.png" /></div>
+        <div class="nav-links">
+           
+        </div>
+    </nav>
+	<h2>people who signed up</h2>
+		{% for key, user in users.items() %}
+			<h1>Name: <span style="color: black;">{{user['fullname']}} </span>- email: <span style="color: black;">{{user['em']}}</span>
+			feedback : <span style="color: black;">{{feedback}}</span>
+
+
+			</h1>
+			<br>
+			<hr>
+		{% endfor %}
+
+<div class="body">
+<h1>admin page </h1>
+</body>
+</html>

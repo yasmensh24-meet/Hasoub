@@ -72,6 +72,9 @@ def signin():
 
     try:
       session['user'] = auth.sign_in_with_email_and_password(email, passw)
+      if email == "guys@gmail.com":
+        return redirect(url_for("admin"))
+
       #if email == "":
        # return redirect(url_for("admin"))
 
@@ -84,6 +87,18 @@ def signin():
       
   else:
     return render_template("signin.html")
+
+@app.route('/admin',methods=["GET","POST"])
+def admin():
+  uid = session['user']['localId']
+  users = db.child("Users").get().val()
+  feedback = db.child("feedback").child(uid).get().val()
+  session['feedback']=feedback
+
+
+
+  return render_template("admin.html", users = users, feedback = session['feedback'] )
+
 
 
 @app.route('/demo',methods=["GET","POST"])
@@ -156,6 +171,20 @@ def priority():
 
   
 
+@app.route('/feedback',methods=["GET","POST"])
+def feedback():
+  if request.method=="POST":
+    
+    feed=request.form['feedback']
+    uid =session['user']['localId']
+      
+    db.child('feedback').child(uid).set(feed)
+    feed2= db.child('feedback').child(uid).get().val()
+    session['feedback']=feed2 
+
+    return render_template("thank.html")
+  else:
+    return render_template("feedback.html")
 
 
 
