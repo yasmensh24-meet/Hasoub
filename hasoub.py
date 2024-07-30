@@ -35,32 +35,31 @@ def main():
     phone= request.form["phone"]
     user = { "em": email,"fullname" :name,"phonenum":phone,"password":passw} 
     
-    try:
-      session['user'] = auth.create_user_with_email_and_password(email, passw)
-      uid =session['user']['localId']
+    #try:
+    session['user'] = auth.create_user_with_email_and_password(email, passw)
+    uid =session['user']['localId']
 
-      db.child("Users").child(uid).set(user)
-      acc = db.child("Users").child(uid).get().val()
+    db.child("Users").child(uid).set(user)
+    acc = db.child("Users").child(uid).get().val()
 
-      print(acc)
+    print(acc)
 
-      email = acc['em']
-      session['em'] = email
-      #added now
-      name = acc['fullname']
-      session['fullname'] = name
-      phone = acc['phonenum']
-      session['phonenum'] = phone
-      passw = acc['password']
-      session['password'] = passw
-
+    email = acc['em']
+    session['em'] = email
+    name = acc['fullname']
+    session['fullname'] = name
+    phone = acc['phonenum']
+    session['phonenum'] = phone
+    passw = acc['password']
+    session['password'] = passw
 
 
-      return redirect(url_for('demo'))
-    except:
-      print("error try again")
-      session.modified=True
-      return redirect('/error')
+
+    return redirect(url_for('demo'))
+    #except:
+    #  print("error try again")
+    #  session.modified=True
+    #  return redirect('/error')
       
   else:
     return render_template("membership.html")
