@@ -90,6 +90,13 @@ def signin():
 def demo():
 	return render_template("demo.html")
 
+@app.route('/signout')
+def signout():
+    # session.pop('user')
+    session['user']=None
+    auth.current_user = None
+    print("signed out user")
+    return redirect(url_for('main'))
 
 @app.route('/error',methods=["GET","POST"])
 def error():
