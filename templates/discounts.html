@@ -1,19 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounts & Offers</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            justify-content: flex-start; /* Changed from center to flex-start */
+            padding-top: 50px; /* Adds space at the top */
+        }
+
+        h1 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        a {
+            color: #de3e4d;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            background-color: #de3e4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: black;
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px; /* Adds space below the image */
+        }
+    </style>
 </head>
 <body>
-	<h1>Discounts & Offers !!</h1>
-	<br>
-	<h2>only for speacial ones  </h2>
-	<h3>Get to try our new Frontend AI based program here ></h3>
-	<a href="https://ar.hasoub.org/labs/careers/front-end-ai">
-		<img src='../static/hasoub.jpg' width="900" height="800">
-	</a>
-	<br>
-	<a href='/demo'>go back</a>
+    <h1>Discounts & Offers !!</h1>
+    <h2>Only for special ones</h2>
+    <h3>Get to try our new Frontend AI-based program here:</h3>
+    <a href="https://ar.hasoub.org/labs/careers/front-end-ai">
+        <img src='../static/hasoub.jpg' alt="Hasoub Frontend AI Program">
+    </a>
+    <a href="/demo" class="button">Back to demo page</a>
+    <br><br><br>
+    <h1>.</h1>
 </body>
 </html>
