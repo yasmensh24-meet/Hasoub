@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../demo/demo.css">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Demo</title>
+    <link rel="stylesheet" href="../static/demo.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo</title>
     <style type="text/css">
         /* demo.css */
 form {
@@ -65,11 +65,11 @@ a {
 <h1>Choose!</h1>
 <form>
     <div class="container">
-        <a href="/priority"><button>priorty booking</button></a>
+        <a href="{{ url_for('priority') }}"><button type="button">Priority Booking</button></a>
         <br>
-        <a href="/history"><button>booking history</button></a>
+        <a href="{{ url_for('history') }}"><button type="button">Booking History</button></a>
         <br>
-        <a href="/custome"><button>customize</button></a>
+        <a href="{{ url_for('custome') }}"><button type="button">Customize</button></a>
      </div>
 </form>
 </body>
