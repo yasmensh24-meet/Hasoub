@@ -157,6 +157,9 @@ def priority():
 def thank():
   return render_template("thank.html")
 
+@app.route('/discounts',methods=["GET","POST"])
+def discounts():
+  return render_template("discounts.html")
 
 
 
