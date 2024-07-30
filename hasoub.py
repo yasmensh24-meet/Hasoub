@@ -110,7 +110,7 @@ def history():
 		return redirect(url_for('signin'))
 
 
-	return render_template("history.html")
+	return render_template("history.html") 
 
 
 @app.route('/custome',methods=["GET","POST"])
