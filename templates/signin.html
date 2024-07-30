@@ -1,21 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>signin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+
+        form {
+            width: 85%;
+            background-color: #de3e4d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            color: #de3e4d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .form-container {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-	<h1>welcome back </h1>
-	
-		<form method="POST" action="/signin">
-		<input type="email" name="email" placeholder="enter your email">
-		
-		<input type="password" name="password" placeholder="enter your password">
-		<br>
-	
-		<input type="submit" name="submit">
+    <div class="form-container">
+        <h1>Welcome Back, sign in</h1>
+        <form method="POST" action="/signin">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
 
-	
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+        
+            <input type="submit" name="submit" value="Sign In">
+        </form>
+    </div>
 </body>
 </html>

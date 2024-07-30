@@ -1,19 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Priority</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        form {
+            width: 60%;
+            background-color: #de3e4d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            color: #de3e4d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color: white;
+        }
+
+        a {
+            color: #de3e4d;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<h1>when do you want to book in?</h1>
 <body>
-	<form action="/priority" method="POST">
-		<input type="date" name="date" value="2024-08-01">bigger space 
-		<br><br>
- 	 	<input type="date" name="date" value="2024-08-01">smaller space
- 	 <br>
- 		<input type="submit" name="submit">
-</form>
-  <a href ='/demo'>go back</a>
+    <h1>When do you want to book in?</h1>
+    
+    <form action="/priority" method="POST">
+        <input type="date" name="date" value="date"> Bigger Space<br><br>
+        <input type="date" name="date" value="date"> Smaller Space<br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <a href="/demo">Back to demo page</a>
 </body>
 </html>

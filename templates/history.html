@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #de3e4d;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        a {
+            color: #de3e4d;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-	<h1>hello! you booked in: </h1>
+    <h1>Hello! You booked in:</h1>
     
-	{% if history %}
+    {% if history %}
         <ul>
             {% for booking in history %}
                 <li>{{ booking.date }}</li>
@@ -18,6 +69,6 @@
         <p>No booking history found.</p>
     {% endif %}
 
-    <a href ='/demo'>go back</a>
+    <a href="/demo">Back to demo page</a>
 </body>
 </html>
