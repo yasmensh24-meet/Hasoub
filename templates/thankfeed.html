@@ -111,20 +111,14 @@
            
         </div>
     </nav>
-	<h2>people who signed up</h2>
-		  {% for user_id, user in users.items() %}
-            <h1>Name: <span style="color: black;">{{ user['fullname'] }}</span> - Email: <span style="color: black;">{{ user['em'] }}</span>  feedback: <span style="color: black;">{{ user['feedback'] }}</span>   </h1>
-            
-            {% if user_id in feedback_map %}
-                <h2>Feedback: <span class="feedback">{{ feedback_map[user_id] }}</span></h2>
-            {% else %}
-                <h2>No feedback available</h2>
-            {% endif %}
-            
-            <div class="divider"></div>
-        {% endfor %}
+
 
 <div class="body">
-<h1>admin page </h1>
+
+    <h1>Thank you for your feedback!!!</h1>
+    <br>
+    
+	 
+    <a href="/demo" class="button">Back to demo page</a>
 </body>
 </html>

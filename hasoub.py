@@ -90,14 +90,14 @@ def signin():
 
 @app.route('/admin',methods=["GET","POST"])
 def admin():
+
   uid = session['user']['localId']
   users = db.child("Users").get().val()
-  feedback = db.child("feedback").child(uid).get().val()
-  session['feedback']=feedback
+  feedback = db.child("feedback").get().val()
 
 
 
-  return render_template("admin.html", users = users, feedback = session['feedback'] )
+  return render_template("admin.html", users = users, feedback = feedback )
 
 
 
@@ -178,11 +178,13 @@ def feedback():
     feed=request.form['feedback']
     uid =session['user']['localId']
       
-    db.child('feedback').child(uid).set(feed)
-    feed2= db.child('feedback').child(uid).get().val()
-    session['feedback']=feed2 
+    ref = db.child('Users').child(uid).get().val()
+##add a new key/value to the dict
+    ref['feedback']=feed
+    db.child('Users').child(uid).set(ref)
+   
 
-    return render_template("thank.html")
+    return render_template("thankfeed.html")
   else:
     return render_template("feedback.html")
 
