@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>custome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>custome</title>
     <style type="text/css"> /* customize.css */
 
 .form {
@@ -22,8 +22,6 @@
 .become {
     color: #de3e4d;
     margin-bottom: 20px;
-
-
 }
 
 form {
@@ -80,22 +78,16 @@ div {
     margin-bottom: 20px;
 }
 
-
 a {
     color: #de3e4d;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
     font-size: 18px;
 }
 
 a:hover {
     text-decoration: underline;
 }
-
-
-
-
 
 .navbar {
     background-color: #de3e4d;
@@ -117,14 +109,12 @@ a:hover {
 
 .brand {
     font-size: 24px;
-        margin-bottom: 0px !important;
-
+    margin-bottom: 0px !important;
     font-weight: bold;
 }
 
 .nav-links a {
     margin-bottom: 0px !important;
-
     color: white;
     text-decoration: none;
     margin: 0 10px;
@@ -150,11 +140,10 @@ a:hover {
     color: black;
 }
 
-
-
-
-
-
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
 
 </style>
 </head>
@@ -162,81 +151,72 @@ a:hover {
     <nav class="navbar">
         <div class="logo"></div>
         <div class="brand"><img src="https://static.wixstatic.com/media/db8066_490993c02a46436daef4577d924b8047~mv2.png/v1/fill/w_176,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/db8066_490993c02a46436daef4577d924b8047~mv2.png" /></div>
-        <div class="nav-links">
-
-        </div>
+        <div class="nav-links"></div>
     </nav>
 
-
 <div class="body">
-
-
-<h1 style="text-align: center;" class="become">customize the room!</h1>
-<div class="form">
-    <form method="POST" action="/custome">
-        <div>
-            <label for="tableCount">How many tables?</label>
-            <input type="number" id="tableCount" name="tableCount" min="1" required>
-        </div>
-        <div>
-            <label>
-                <input type="radio" name="alignment" value="left" required>
-                Left
-            </label>
-            <label>
-                <input type="radio" name="alignment" value="right">
-                Right
-            </label>
-        </div>
-        <div>
-            <label for="chairCount">How many chairs?</label>
-            <input type="number" id="chairCount" name="chairCount" required>
-
-        <div>
-            <p>Screen:</p>
-            <label>
-                <input type="radio" name="screen" value="yes" required>
-                Yes
-            </label>
-            <label>
-                <input type="radio" name="screen" value="no">
-                No
-            </label>
-        </div>
-
-
-        <!-- Stand Option -->
-        <div>
-            <p>Stand:</p>
-            <label>
-                <input type="radio" name="stand" value="yes" required>
-                Yes
-            </label>
-            <label>
-                <input type="radio" name="stand" value="no">
-                No
-            </label>
-        </div>
-
-        <!-- White Board Option -->
-        <div>
-            <p>White Board:</p>
-            <label>
-                <input type="radio" name="whiteBoard" value="yes" required>
-                Yes
-            </label>
-            <label>
-                <input type="radio" name="whiteBoard" value="no">
-                No
-            </label>
-        </div>
-
-
-
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+    <h1 style="text-align: center;" class="become">customize the room!</h1>
+    <div class="form">
+        <form method="POST" action="/custome">
+            <div>
+                <label for="tableCount">How many tables?</label>
+                <input type="number" id="tableCount" name="tableCount" min="1" required>
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="alignment" value="left" required>
+                    Left
+                </label>
+                <label>
+                    <input type="radio" name="alignment" value="right">
+                    Right
+                </label>
+            </div>
+            <div>
+                <label for="chairCount">How many chairs?</label>
+                <input type="number" id="chairCount" name="chairCount" required>
+                <div>
+                    <p>Screen:</p>
+                    <label>
+                        <input type="radio" name="screen" value="yes" required>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="screen" value="no">
+                        No
+                    </label>
+                </div>
+                <!-- Stand Option -->
+                <div>
+                    <p>Stand:</p>
+                    <label>
+                        <input type="radio" name="stand" value="yes" required>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="stand" value="no">
+                        No
+                    </label>
+                </div>
+                <!-- White Board Option -->
+                <div>
+                    <p>White Board:</p>
+                    <label>
+                        <input type="radio" name="whiteBoard" value="yes" required>
+                        Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="whiteBoard" value="no">
+                        No
+                    </label>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="center-button">
+        <a href='/demo' class="button">go back</a>
+    </div>
 </div>
-    <a href ='/demo' class="button" >go back</a>
 </body>
 </html>
