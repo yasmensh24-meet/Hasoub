@@ -48,6 +48,20 @@ button {
     font-size: 16px;
     font-weight: bold;
     width: 100%;
+    
+
+}
+
+.so {
+    background-color: white;
+    color: #de3e4d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 60%;
 }
 
 button:hover {
@@ -130,10 +144,13 @@ a {
         <br>
         <a href="{{ url_for('feedback') }}"><button type="button">Give your feedback</button></a>
         <br>
-        <a href="{{ url_for('signout') }}"><button type="button">Signout</button></a>
-        <br>
+    
+        <div >
+            <a href="{{ url_for('signout') }}"><button class="so" type="button">Signout</button></a>
+            <br>
         
-     </div>
+        </div>
+    </div>
 </form>
 </body>
 </html>
