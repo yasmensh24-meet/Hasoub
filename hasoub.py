@@ -140,7 +140,7 @@ def custome():
   if request.method == "GET":
     return render_template("custome.html")
   else:
-    return redirect(url_for("thank"))
+    return render_template("thankcustome.html")
 
 
 
